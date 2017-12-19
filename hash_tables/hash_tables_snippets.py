@@ -23,7 +23,6 @@ table = tf.contrib.lookup.MutableDenseHashTable(key_dtype = tf.string,
 insert_op = table.insert(keys,values) #In the MutableHashTable the insert/update is an operation, since it can be run during learning
 sess.run(insert_op)
 
-
 ind = table.lookup(query)
 ind = tf.cast(ind, tf.int64)
 
