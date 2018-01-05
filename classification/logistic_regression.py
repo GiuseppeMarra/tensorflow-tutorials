@@ -29,10 +29,10 @@ def act(x):
 # Blobs
 X,Y = datasets.make_blobs(n_samples=dataset_size,n_features=2,centers=2, )
 
-#Circles
+# Circles
 # X, Y = datasets.make_circles(n_samples=100)
 
-# # Moons
+# Moons
 # X,Y = datasets.make_moons(n_samples=dataset_size)
 
 
@@ -54,11 +54,11 @@ b = tf.Variable(initial_value=tf.zeros([output_size]))
 a = tf.matmul(x,w) + b
 y = tf.sigmoid(a)
 
-#Critirion
+# Criterion
 cost = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels = t,
                                         logits = a))
 
-#Optimization
+# Optimization
 train_op = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)
 
 ###Optimization/Running phase
